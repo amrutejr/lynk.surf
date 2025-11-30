@@ -29,12 +29,12 @@ const Hero = () => {
     };
 
     return (
-        <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div className="relative pt-24 pb-12 lg:pt-40 lg:pb-28 overflow-hidden">
             {/* Background gradients */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob"></div>
-                <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-pink-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-4000"></div>
+                <div className="absolute top-0 left-1/4 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-brand-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob"></div>
+                <div className="absolute top-0 right-1/4 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-purple-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-2000"></div>
+                <div className="absolute -bottom-32 left-1/3 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-pink-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-4000"></div>
             </div>
 
             {/* Status Popup */}
@@ -97,7 +97,7 @@ const Hero = () => {
                             Chrome Store Submission Under Review
                         </motion.div>
 
-                        <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                        <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
                             The Ultimate <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600 dark:from-brand-400 dark:to-purple-400">LinkedIn Tool</span>
                         </h1>
@@ -140,7 +140,7 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="relative lg:h-auto h-[500px] w-full"
+                        className="relative lg:h-auto h-[400px] w-full"
                     >
                         <div className="relative w-full max-w-lg mx-auto h-full flex items-center justify-center">
                             <div className="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>

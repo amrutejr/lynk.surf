@@ -3,6 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const VideoModal = ({ isOpen, onClose, videoSrc }) => {
+    const getYouTubeEmbedUrl = (url) => {
+        if (!url) return null;
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11)
+            ? `https://www.youtube.com/embed/${match[2]}?autoplay=1`
+            : null;
+    };
+
+    const youtubeEmbedUrl = getYouTubeEmbedUrl(videoSrc);
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -26,12 +37,24 @@ const VideoModal = ({ isOpen, onClose, videoSrc }) => {
                         >
                             <X className="w-6 h-6" />
                         </button>
-                        <video
-                            src={videoSrc}
-                            className="w-full h-full object-contain"
-                            controls
-                            autoPlay
-                        />
+
+                        {youtubeEmbedUrl ? (
+                            <iframe
+                                src={youtubeEmbedUrl}
+                                className="w-full h-full"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <video
+                                src={videoSrc}
+                                className="w-full h-full object-contain"
+                                controls
+                                autoPlay
+                            />
+                        )}
                     </motion.div>
                 </motion.div>
             )}

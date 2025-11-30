@@ -38,7 +38,7 @@ const Demo = () => {
             <VideoModal
                 isOpen={isVideoOpen}
                 onClose={() => setIsVideoOpen(false)}
-                videoSrc="/videos/4.mp4"
+                videoSrc="https://youtu.be/_OgTNtGZOMI"
             />
         </section>
     );
