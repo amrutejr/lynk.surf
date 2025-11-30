@@ -16,7 +16,7 @@ function App() {
 
   const handleInstallClick = () => {
     // Trigger download
-    window.open('http://dl.dropboxusercontent.com/scl/fi/2zfxumruk1msqi2yzjh48/lynksurf.zip?rlkey=ylx8fi2lht6130ywz9pgmrbw7&st=pck604ls&dl=0', '_self');
+    window.open('https://dl.dropboxusercontent.com/scl/fi/2zfxumruk1msqi2yzjh48/lynksurf.zip?rlkey=ylx8fi2lht6130ywz9pgmrbw7&st=pck604ls&dl=0', '_self');
 
     // Open modal
     setIsInstallModalOpen(true);

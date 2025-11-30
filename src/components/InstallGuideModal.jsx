@@ -77,7 +77,7 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                             <div>
                                                 <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Download Extension</h4>
                                                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynksurf.zip</code> file should have started downloading automatically. Not downloaded yet? <a href="http://dl.dropboxusercontent.com/scl/fi/2zfxumruk1msqi2yzjh48/lynksurf.zip?rlkey=ylx8fi2lht6130ywz9pgmrbw7&st=pck604ls&dl=0" className="text-brand-600 hover:text-brand-700 underline">click here</a>
+                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynksurf.zip</code> file should have started downloading automatically. Not downloaded yet? <a href="https://dl.dropboxusercontent.com/scl/fi/2zfxumruk1msqi2yzjh48/lynksurf.zip?rlkey=ylx8fi2lht6130ywz9pgmrbw7&st=pck604ls&dl=0" className="text-brand-600 hover:text-brand-700 underline">click here</a>
                                                 </p>
                                             </div>
                                         </div>
