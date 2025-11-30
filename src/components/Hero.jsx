@@ -3,8 +3,31 @@ import { Download, Chrome, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HeroMockup from './HeroMockup';
 
+import { useTheme } from '../context/ThemeContext';
+
 const Hero = ({ onInstallClick }) => {
     const [showStatusPopup, setShowStatusPopup] = React.useState(false);
+    const { theme } = useTheme();
+    const [badgeTheme, setBadgeTheme] = React.useState('light');
+
+    React.useEffect(() => {
+        const updateBadgeTheme = () => {
+            if (theme === 'system') {
+                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setBadgeTheme(isDark ? 'dark' : 'light');
+            } else {
+                setBadgeTheme(theme);
+            }
+        };
+
+        updateBadgeTheme();
+
+        if (theme === 'system') {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            mediaQuery.addEventListener('change', updateBadgeTheme);
+            return () => mediaQuery.removeEventListener('change', updateBadgeTheme);
+        }
+    }, [theme]);
 
     const handleChromeBtnHover = () => {
         setShowStatusPopup(true);
@@ -76,7 +99,7 @@ const Hero = ({ onInstallClick }) => {
                         >
                             <a href="https://www.producthunt.com/products/lynksurf?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-lynksurf" target="_blank" rel="noopener noreferrer">
                                 <img
-                                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1044060&theme=light&t=1764513902074"
+                                    src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1044060&theme=${badgeTheme}&t=1764513902074`}
                                     alt="Lynksurf - The Ultimate Linkedin Tool | Product Hunt"
                                     style={{ width: '250px', height: '54px' }}
                                     width="250"
