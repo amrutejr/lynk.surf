@@ -11,8 +11,8 @@ const Hero = () => {
     const handleInstallClick = () => {
         // Trigger download
         const link = document.createElement('a');
-        link.href = '/extension/lynksurf.crx';
-        link.download = 'lynksurf.crx';
+        link.href = '/extension/lynk-main 2.zip';
+        link.download = 'lynk-main 2.zip';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

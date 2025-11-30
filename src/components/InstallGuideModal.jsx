@@ -77,7 +77,7 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                             <div>
                                                 <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Download Extension</h4>
                                                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynksurf.crx</code> file should have started downloading automatically.
+                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynk-main 2.zip</code> file should have started downloading automatically.
                                                 </p>
                                             </div>
                                         </div>
@@ -88,14 +88,10 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                                 2
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Open Extensions Page</h4>
-                                                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                                                    Open a new tab and navigate to:
+                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Unzip File</h4>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">
+                                                    Locate the downloaded zip file and extract/unzip it to a folder on your computer.
                                                 </p>
-                                                <div className="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg flex justify-between items-center group cursor-pointer" onClick={() => navigator.clipboard.writeText('chrome://extensions')}>
-                                                    <code className="text-xs font-mono text-slate-700 dark:text-slate-300">chrome://extensions</code>
-                                                    <span className="text-xs text-brand-600 dark:text-brand-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">Copy</span>
-                                                </div>
                                             </div>
                                         </div>
 
@@ -105,9 +101,16 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                                 3
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Enable Developer Mode</h4>
-                                                <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                    Toggle the <strong>"Developer mode"</strong> switch in the top right corner of the extensions page.
+                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Open Extensions Page</h4>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                                                    Open a new tab and navigate to:
+                                                </p>
+                                                <div className="bg-slate-100 dark:bg-slate-800 p-2 rounded-lg flex justify-between items-center group cursor-pointer" onClick={() => navigator.clipboard.writeText('chrome://extensions')}>
+                                                    <code className="text-xs font-mono text-slate-700 dark:text-slate-300">chrome://extensions</code>
+                                                    <span className="text-xs text-brand-600 dark:text-brand-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">Copy</span>
+                                                </div>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                                    Then toggle <strong>"Developer mode"</strong> in the top right.
                                                 </p>
                                             </div>
                                         </div>
@@ -118,9 +121,9 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                                 4
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Drag & Drop</h4>
+                                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Load Unpacked</h4>
                                                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                    Drag the downloaded <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">.crx</code> file from your downloads bar or folder and drop it onto the extensions page.
+                                                    Click the <strong>"Load unpacked"</strong> button and select the folder you extracted in Step 2.
                                                 </p>
                                             </div>
                                         </div>
