@@ -77,7 +77,7 @@ const InstallGuideModal = ({ isOpen, onClose }) => {
                                             <div>
                                                 <h4 className="font-semibold text-slate-900 dark:text-white mb-1">Download Extension</h4>
                                                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynk-main 2.zip</code> file should have started downloading automatically.
+                                                    The <code className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-xs font-mono">lynksurf.zip</code> file should have started downloading automatically.
                                                 </p>
                                             </div>
                                         </div>

@@ -2,24 +2,9 @@ import React from 'react';
 import { Download, Chrome, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HeroMockup from './HeroMockup';
-import InstallGuideModal from './InstallGuideModal';
 
-const Hero = () => {
-    const [isInstallModalOpen, setIsInstallModalOpen] = React.useState(false);
+const Hero = ({ onInstallClick }) => {
     const [showStatusPopup, setShowStatusPopup] = React.useState(false);
-
-    const handleInstallClick = () => {
-        // Trigger download
-        const link = document.createElement('a');
-        link.href = '/extension/lynk-main 2.zip';
-        link.download = 'lynk-main 2.zip';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        // Open modal
-        setIsInstallModalOpen(true);
-    };
 
     const handleChromeBtnHover = () => {
         setShowStatusPopup(true);
@@ -120,7 +105,7 @@ const Hero = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={handleInstallClick}
+                                onClick={onInstallClick}
                                 className="inline-flex items-center justify-center gap-2 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-brand-500/20 hover:shadow-brand-500/30"
                             >
                                 <Download className="h-5 w-5" /> Install Extension
@@ -153,11 +138,6 @@ const Hero = () => {
                     </motion.div>
                 </div>
             </div>
-
-            <InstallGuideModal
-                isOpen={isInstallModalOpen}
-                onClose={() => setIsInstallModalOpen(false)}
-            />
         </div>
     );
 };
