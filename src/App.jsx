@@ -31,11 +31,13 @@ function App() {
         </Suspense>
         <div className="relative z-10">
           <Navbar onInstallClick={handleInstallClick} />
-          <div className="pt-16">
-            <Banner />
-          </div>
           <main>
-            <Hero onInstallClick={handleInstallClick} />
+            <div className="relative">
+              <div className="sticky top-16 z-40">
+                <Banner />
+              </div>
+              <Hero onInstallClick={handleInstallClick} />
+            </div>
             <Features />
             <ToneOptions />
             <HowItWorks />
