@@ -22,12 +22,14 @@ const Navbar = ({ onInstallClick }) => {
                         <a href="#how-it-works" className="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors">How it Works</a>
                         <a href="#demo" className="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium transition-colors">Demo</a>
                         <ThemeToggle />
-                        <button
-                            onClick={onInstallClick}
+                        <a
+                            href="https://chromewebstore.google.com/detail/jkckjfgippgdfglphmnneggeepjogbjg?utm_source=item-share-cb"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30"
                         >
                             Install Extension
-                        </button>
+                        </a>
                     </div>
 
                     <div className="md:hidden flex items-center gap-4">
@@ -52,12 +54,14 @@ const Navbar = ({ onInstallClick }) => {
                             <a href="#how-it-works" className="block px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium rounded-md hover:bg-slate-50 dark:hover:bg-slate-800">How it Works</a>
                             <a href="#demo" className="block px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 font-medium rounded-md hover:bg-slate-50 dark:hover:bg-slate-800">Demo</a>
                             <div className="pt-4">
-                                <button
-                                    onClick={onInstallClick}
-                                    className="w-full bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-brand-500/20"
+                                <a
+                                    href="https://chromewebstore.google.com/detail/jkckjfgippgdfglphmnneggeepjogbjg?utm_source=item-share-cb"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-center w-full bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-brand-500/20"
                                 >
                                     Install Extension
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </motion.div>
