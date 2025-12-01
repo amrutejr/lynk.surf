@@ -9,6 +9,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import InstallGuideModal from './components/InstallGuideModal';
+import Banner from './components/Banner';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
         </Suspense>
         <div className="relative z-10">
           <Navbar onInstallClick={handleInstallClick} />
+          <div className="pt-16">
+            <Banner />
+          </div>
           <main>
             <Hero onInstallClick={handleInstallClick} />
             <Features />
