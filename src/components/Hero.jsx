@@ -3,30 +3,10 @@ import { Chrome, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HeroMockup from './HeroMockup';
 
-import { useTheme } from '../context/ThemeContext';
+
 
 const Hero = ({ onInstallClick }) => {
-    const { theme } = useTheme();
-    const [badgeTheme, setBadgeTheme] = React.useState('light');
 
-    React.useEffect(() => {
-        const updateBadgeTheme = () => {
-            if (theme === 'system') {
-                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                setBadgeTheme(isDark ? 'dark' : 'light');
-            } else {
-                setBadgeTheme(theme);
-            }
-        };
-
-        updateBadgeTheme();
-
-        if (theme === 'system') {
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            mediaQuery.addEventListener('change', updateBadgeTheme);
-            return () => mediaQuery.removeEventListener('change', updateBadgeTheme);
-        }
-    }, [theme]);
 
 
 
@@ -49,22 +29,7 @@ const Hero = ({ onInstallClick }) => {
                         transition={{ duration: 0.6 }}
                         className="text-center lg:text-left"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1, duration: 0.6 }}
-                            className="flex justify-center lg:justify-start mb-8"
-                        >
-                            <a href="https://www.producthunt.com/products/lynksurf?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-lynksurf" target="_blank" rel="noopener noreferrer">
-                                <img
-                                    src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1044060&theme=${badgeTheme}&t=1764513902074`}
-                                    alt="Lynksurf - The Ultimate Linkedin Tool | Product Hunt"
-                                    style={{ width: '250px', height: '54px' }}
-                                    width="250"
-                                    height="54"
-                                />
-                            </a>
-                        </motion.div>
+
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
