@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Banner = () => {
     return (
-        <div className="bg-brand-600 text-white py-2 overflow-hidden relative z-40">
+        <div className="bg-[#0277bd] text-white py-2 overflow-hidden relative z-40">
             <div className="flex whitespace-nowrap">
                 <motion.div
                     animate={{ x: [0, -1000] }}

@@ -5,7 +5,7 @@ const MessageGeneratorCard = () => {
     return (
         <div className="h-full flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-slate-900">
             <div className="p-4 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Generate Message</h3>
+                <div className="text-sm font-bold text-slate-900 dark:text-white">Generate Message</div>
             </div>
 
             <div className="p-5 flex-1 flex flex-col bg-slate-50/50 dark:bg-slate-900/50">

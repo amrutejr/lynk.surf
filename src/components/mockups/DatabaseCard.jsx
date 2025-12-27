@@ -5,7 +5,7 @@ const DatabaseCard = () => {
     return (
         <div className="h-full flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-slate-900">
             <div className="p-4 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">Saved Profiles</h3>
+                <div className="text-sm font-bold text-slate-900 dark:text-white">Saved Profiles</div>
             </div>
 
             <div className="p-4 flex-1 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col gap-4">
@@ -15,9 +15,9 @@ const DatabaseCard = () => {
 
                 <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
                     <div className="grid grid-cols-[1fr_1.5fr_0.8fr] gap-2 p-3 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50">
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Name</div>
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Email</div>
-                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider text-right">Actions</div>
+                        <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Name</div>
+                        <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider">Email</div>
+                        <div className="text-[10px] font-bold text-slate-600 uppercase tracking-wider text-right">Actions</div>
                     </div>
 
                     <div className="grid grid-cols-[1fr_1.5fr_0.8fr] gap-2 p-4 items-center">
@@ -28,13 +28,13 @@ const DatabaseCard = () => {
                             john.doe@example.com
                         </div>
                         <div className="flex flex-col gap-2 items-end">
-                            <button className="text-slate-400 hover:text-brand-500 transition-colors">
+                            <button className="text-slate-400 hover:text-brand-500 transition-colors" aria-label="View Profile">
                                 <Eye className="w-3.5 h-3.5" />
                             </button>
-                            <button className="text-slate-400 hover:text-blue-500 transition-colors">
+                            <button className="text-slate-400 hover:text-blue-500 transition-colors" aria-label="Edit Profile">
                                 <Pencil className="w-3.5 h-3.5" />
                             </button>
-                            <button className="text-slate-400 hover:text-red-500 transition-colors">
+                            <button className="text-slate-400 hover:text-red-500 transition-colors" aria-label="Delete Profile">
                                 <Trash2 className="w-3.5 h-3.5" />
                             </button>
                         </div>

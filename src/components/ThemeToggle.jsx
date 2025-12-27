@@ -24,6 +24,7 @@ const ThemeToggle = () => {
                         className={`relative p-2 rounded-full transition-all duration-200 ${isActive ? 'text-brand-600 dark:text-brand-400' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
                             }`}
                         title={`Switch to ${option.label} mode`}
+                        aria-label={`Switch to ${option.label} mode`}
                     >
                         {isActive && (
                             <motion.div

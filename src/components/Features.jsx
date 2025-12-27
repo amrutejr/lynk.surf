@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
-import { MessageSquare, Edit3, Wand2, Database, UserCheck, Search, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { MessageSquare, Edit3, Wand2, Database, UserCheck, Search } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Import videos
 import video1 from '../assets/videos/1.mp4';
@@ -12,101 +12,133 @@ import video6 from '../assets/videos/6.mp4';
 
 const features = [
     {
-        icon: <MessageSquare className="h-6 w-6 text-brand-600" />,
+        id: 'drafter',
+        icon: <MessageSquare className="h-6 w-6 text-brand-600" aria-hidden="true" />,
         title: "Comment Auto Drafter",
-        tagline: "Instant, context-aware replies in seconds",
+        tagline: "Instant, context-aware replies",
         description: "Generate thoughtful comments instantly based on the post's content and your professional persona.",
-        color: "bg-blue-50",
-        video: video1
+        video: video1,
+        // Bento Config
+        colSpan: "md:col-span-12",
+        variant: "large"
     },
     {
-        icon: <Edit3 className="h-6 w-6 text-purple-600" />,
+        id: 'enhancer',
+        icon: <Edit3 className="h-6 w-6 text-purple-600" aria-hidden="true" />,
         title: "Comment Enhancer",
-        tagline: "Polish your thoughts into professional insights",
-        description: "Refine your quick drafts into polished, engaging comments that stand out in the feed.",
-        color: "bg-purple-50",
-        video: video2
+        tagline: "Polish your thoughts",
+        description: "Refine your quick drafts into polished, engaging comments.",
+        video: video2,
+        colSpan: "md:col-span-6",
+        variant: "small"
     },
     {
-        icon: <Wand2 className="h-6 w-6 text-pink-600" />,
+        id: 'post',
+        icon: <Wand2 className="h-6 w-6 text-pink-600" aria-hidden="true" />,
         title: "Post Enhancer",
-        tagline: "Turn rough ideas into viral content",
+        tagline: "Rough ideas to viral content",
         description: "Transform simple bullet points into structured, engaging LinkedIn posts with perfect formatting.",
-        color: "bg-pink-50",
-        video: video3
+        video: video3,
+        colSpan: "md:col-span-6",
+        variant: "small"
     },
     {
-        icon: <Database className="h-6 w-6 text-amber-600" />,
+        id: 'database',
+        icon: <Database className="h-6 w-6 text-amber-600" aria-hidden="true" />,
         title: "Email Database",
-        tagline: "Find contact info for leads instantly",
+        tagline: "Find leads instantly",
         description: "Access a vast database of verified professional emails directly from LinkedIn profiles.",
-        color: "bg-amber-50",
-        video: video4
+        video: video4,
+        colSpan: "md:col-span-12",
+        variant: "large"
     },
     {
-        icon: <UserCheck className="h-6 w-6 text-green-600" />,
+        id: 'summariser',
+        icon: <UserCheck className="h-6 w-6 text-green-600" aria-hidden="true" />,
         title: "Profile Summariser",
-        tagline: "Get the gist of any profile fast",
-        description: "Instantly summarize long profiles to understand key skills, experience, and mutual interests.",
-        color: "bg-green-50",
-        video: video5
+        tagline: "Get the gist fast",
+        description: "Instantly summarize long profiles to understand key skills.",
+        video: video5,
+        colSpan: "md:col-span-6",
+        variant: "medium"
     },
     {
-        icon: <Search className="h-6 w-6 text-indigo-600" />,
+        id: 'analyzer',
+        icon: <Search className="h-6 w-6 text-indigo-600" aria-hidden="true" />,
         title: "Profile Analyzer",
-        tagline: "Deep insights for better networking",
-        description: "Analyze profiles to find conversation starters and connection opportunities based on shared data.",
-        color: "bg-indigo-50",
-        video: video6
+        tagline: "Deep insights",
+        description: "Find conversation starters and connection opportunities.",
+        video: video6,
+        colSpan: "md:col-span-6",
+        variant: "medium"
     }
 ];
 
-const FeatureCard = ({ feature, isActive, onVideoEnd }) => {
-    const videoRef = useRef(null);
-
-    React.useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.playbackRate = 2.0;
-        }
-
-        if (isActive && videoRef.current) {
-            videoRef.current.currentTime = 0;
-            videoRef.current.play().catch(error => console.log("Video play failed:", error));
-        } else if (!isActive && videoRef.current) {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-        }
-    }, [isActive]);
+const FeatureCard = ({ feature }) => {
+    const isLarge = feature.variant === 'large';
 
     return (
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-8 shadow-xl border border-slate-100 dark:border-slate-700 h-full flex flex-col justify-center">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="flex-1 text-left">
-                    <div className="w-12 h-12 bg-brand-50 dark:bg-brand-900/30 rounded-xl flex items-center justify-center mb-6">
-                        {feature.icon}
+        <div className={`h-full group relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:border-brand-500/30 transition-all duration-300
+            ${isLarge ? 'bg-gradient-to-br from-brand-50/80 via-white to-white dark:from-slate-800 dark:to-slate-900' : 'bg-white dark:bg-slate-800'}
+        `}>
+            {/* Content Container */}
+            <div className={`p-6 ${isLarge ? 'md:p-10 flex flex-col md:flex-row gap-8 md:items-center h-full' : 'flex flex-col h-full'}`}>
+
+                {/* Text Content */}
+                <div className={`${isLarge ? 'md:flex-1 order-2 md:order-1' : 'mb-6'}`}>
+                    <div className={`
+                        ${isLarge ? 'w-16 h-16 mb-6' : 'w-12 h-12 mb-4'} 
+                        bg-white dark:bg-slate-700/50 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-600 group-hover:scale-110 transition-transform duration-300
+                    `}>
+                        {React.cloneElement(feature.icon, {
+                            className: isLarge
+                                ? feature.icon.props.className.replace('h-6 w-6', 'h-8 w-8')
+                                : feature.icon.props.className
+                        })}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{feature.title}</h3>
-                    <p className="text-brand-600 dark:text-brand-400 text-sm font-medium mb-3">{feature.tagline}</p>
-                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+
+                    <h3 className={`
+                        font-bold text-slate-900 dark:text-white mb-3
+                        ${isLarge ? 'text-3xl md:text-5xl leading-tight' : 'text-xl'}
+                    `}>
+                        {feature.title}
+                    </h3>
+
+                    <p className={`
+                        text-brand-600 dark:text-brand-400 font-medium mb-4
+                        ${isLarge ? 'text-xl' : 'text-sm'}
+                    `}>
+                        {feature.tagline}
+                    </p>
+
+                    <p className={`
+                        text-slate-500 dark:text-slate-400 leading-relaxed
+                        ${isLarge ? 'text-lg max-w-md' : 'text-sm'}
+                    `}>
                         {feature.description}
                     </p>
                 </div>
 
-                <div className="flex-1 w-full">
-                    <div className="rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-video flex items-center justify-center relative shadow-inner">
+                {/* Media Content */}
+                <div className={`${isLarge ? 'md:flex-1 order-1 md:order-2 h-full min-h-[250px]' : 'flex-1 min-h-[200px]'}`}>
+                    <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-900 shadow-inner relative group-hover:shadow-brand-500/20 transition-all">
                         {feature.video ? (
                             <video
-                                ref={videoRef}
                                 src={feature.video}
+                                autoPlay
+                                loop
                                 muted
-                                onEnded={onVideoEnd}
-                                className="w-full h-full object-cover"
+                                playsInline
+                                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                             />
                         ) : (
-                            <div className="flex items-center justify-center w-full h-full">
-                                <span className="text-slate-400 dark:text-slate-600 text-xs font-medium">Preview coming soon</span>
+                            <div className="w-full h-full flex items-center justify-center bg-slate-800">
+                                <span className="text-xs text-slate-500">Preview</span>
                             </div>
                         )}
+
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
                     </div>
                 </div>
             </div>
@@ -115,128 +147,8 @@ const FeatureCard = ({ feature, isActive, onVideoEnd }) => {
 };
 
 const Features = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % features.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
-    };
-
-    const getCardStyle = (index) => {
-        const diff = (index - currentIndex + features.length) % features.length;
-
-        // Active card
-        if (diff === 0) {
-            return {
-                zIndex: 20,
-                scale: 1,
-                opacity: 1,
-                x: 0,
-                display: 'block'
-            };
-        }
-        // Next card (Right)
-        if (diff === 1) {
-            return {
-                zIndex: 10,
-                scale: 0.85,
-                opacity: 0.2,
-                x: '60%',
-                display: 'block'
-            };
-        }
-        // Previous card (Left)
-        if (diff === features.length - 1) {
-            return {
-                zIndex: 10,
-                scale: 0.85,
-                opacity: 0.2,
-                x: '-60%',
-                display: 'block'
-            };
-        }
-
-        // Hidden cards
-        return {
-            zIndex: 0,
-            scale: 0.5,
-            opacity: 0,
-            x: 0,
-            display: 'none'
-        };
-    };
-
-    const lastScrollTime = useRef(0);
-    const touchStartX = useRef(0);
-    const touchEndX = useRef(0);
-
-    const handleWheel = (e) => {
-        const now = Date.now();
-        if (now - lastScrollTime.current < 500) return; // 500ms cooldown
-
-        if (Math.abs(e.deltaX) > 20) {
-            if (e.deltaX > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-            lastScrollTime.current = now;
-        }
-    };
-
-    const handleTouchStart = (e) => {
-        touchStartX.current = e.targetTouches[0].clientX;
-    };
-
-    const handleTouchMove = (e) => {
-        touchEndX.current = e.targetTouches[0].clientX;
-    };
-
-    const handleTouchEnd = () => {
-        if (!touchStartX.current || !touchEndX.current) return;
-
-        const diff = touchStartX.current - touchEndX.current;
-        const now = Date.now();
-
-        if (now - lastScrollTime.current < 500) return;
-
-        if (Math.abs(diff) > 50) { // Minimum swipe distance
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-            lastScrollTime.current = now;
-        }
-
-        touchStartX.current = 0;
-        touchEndX.current = 0;
-    };
-
-    // Keyboard navigation
-    React.useEffect(() => {
-        const handleKeyDown = (e) => {
-            const now = Date.now();
-            if (now - lastScrollTime.current < 500) return;
-
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-                lastScrollTime.current = now;
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-                lastScrollTime.current = now;
-            }
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
-
     return (
-        <section id="features" className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 overflow-hidden">
+        <section id="features" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -245,58 +157,26 @@ const Features = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                        Everything you need to dominate LinkedIn
+                    <h2 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+                        Power-packed Features
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">
-                        A complete suite of AI tools designed to save you time and boost your engagement.
+                        Everything you need to dominate LinkedIn, beautifully integrated into one extension.
                     </p>
                 </motion.div>
 
-                <div
-                    className="relative h-[500px] flex items-center justify-center"
-                    onWheel={handleWheel}
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
-                >
-                    {features.map((feature, index) => {
-                        const style = getCardStyle(index);
-                        return (
-                            <motion.div
-                                key={index}
-                                animate={style}
-                                transition={{ duration: 0.5, ease: "easeInOut" }}
-                                className="absolute w-full max-w-4xl px-4"
-                                style={{
-                                    zIndex: style.zIndex,
-                                    pointerEvents: style.opacity === 1 ? 'auto' : 'none'
-                                }}
-                            >
-                                <FeatureCard
-                                    feature={feature}
-                                    isActive={index === currentIndex}
-                                    onVideoEnd={nextSlide}
-                                />
-                            </motion.div>
-                        );
-                    })}
-
-
-                </div>
-
-                {/* Dots Indicator */}
-                <div className="flex justify-center gap-2 mt-8">
-                    {features.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentIndex(index)}
-                            className={`inline-block rounded-full transition-all duration-300 border border-slate-300 dark:border-slate-600 ${index === currentIndex
-                                ? 'w-8 h-3 bg-brand-600 opacity-100'
-                                : 'w-3 h-3 bg-slate-900 dark:bg-white opacity-50 hover:opacity-100 hover:bg-brand-400'
-                                }`}
-                            aria-label={`Go to slide ${index + 1}`}
-                        />
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-fr">
+                    {features.map((feature, index) => (
+                        <motion.div
+                            key={feature.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className={`${feature.colSpan}`}
+                        >
+                            <FeatureCard feature={feature} />
+                        </motion.div>
                     ))}
                 </div>
             </div>

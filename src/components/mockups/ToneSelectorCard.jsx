@@ -14,7 +14,7 @@ const ToneSelectorCard = () => {
 
     return (
         <div className="h-full flex flex-col p-6 bg-slate-50/50 dark:bg-slate-900/50">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4">Select Tone</h3>
+            <div className="text-base font-bold text-slate-900 dark:text-white mb-4">Select Tone</div>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
                 {tones.map((tone) => (

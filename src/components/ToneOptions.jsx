@@ -61,7 +61,7 @@ const ToneOptions = () => {
                                         {tone.icon}
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-slate-900 dark:text-white">{tone.name}</h4>
+                                        <h3 className="font-bold text-slate-900 dark:text-white">{tone.name}</h3>
                                         <p className="text-sm text-slate-500 dark:text-slate-400">{tone.desc}</p>
                                     </div>
                                 </motion.div>

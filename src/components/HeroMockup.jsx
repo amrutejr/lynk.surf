@@ -33,7 +33,9 @@ const HeroMockup = () => {
                         <Sparkles className="w-5 h-5 text-brand-500 fill-brand-500" />
                         <span className="text-xl font-bold text-brand-600 dark:text-brand-400 tracking-tight">LynkSurf</span>
                     </div>
-                    <X className="w-5 h-5 text-slate-400 cursor-pointer hover:text-slate-600 dark:hover:text-slate-200" />
+                    <button className="focus:outline-none" aria-label="Close preview">
+                        <X className="w-5 h-5 text-slate-400 cursor-pointer hover:text-slate-600 dark:hover:text-slate-200" aria-hidden="true" />
+                    </button>
                 </div>
 
                 {/* Tabs */}

@@ -7,13 +7,19 @@ import HowItWorks from './components/HowItWorks';
 import Demo from './components/Demo';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import ParticleBackground from './components/ParticleBackground';
 import InstallGuideModal from './components/InstallGuideModal';
 import Banner from './components/Banner';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
+  const [ParticleBackground, setParticleBackground] = useState(null);
+
+  React.useEffect(() => {
+    import('./components/ParticleBackground').then(module => {
+      setParticleBackground(() => module.default);
+    });
+  }, []);
 
   const handleInstallClick = () => {
     // Trigger download
@@ -26,9 +32,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 relative">
-        <Suspense fallback={null}>
-          <ParticleBackground />
-        </Suspense>
+        {ParticleBackground && <ParticleBackground />}
         <div className="relative z-10">
           <Navbar onInstallClick={handleInstallClick} />
           <main>

@@ -3,7 +3,7 @@ import { Menu, X, Linkedin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 
-import icon from '../assets/icon.png';
+import icon from '../assets/icon.webp';
 
 const Navbar = ({ onInstallClick }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = ({ onInstallClick }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex-shrink-0 flex items-center gap-2">
-                        <img src={icon} alt="LynkSurf Logo" className="h-8 w-8 rounded-lg" />
+                        <img src={icon} alt="LynkSurf Logo" className="h-8 w-8 rounded-lg" width="32" height="32" />
                         <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">LynkSurf</span>
                     </div>
 
@@ -34,7 +34,7 @@ const Navbar = ({ onInstallClick }) => {
 
                     <div className="md:hidden flex items-center gap-4">
                         <ThemeToggle />
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 dark:text-slate-300">
+                        <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 dark:text-slate-300" aria-label="Toggle mobile menu">
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
                     </div>
