@@ -10,8 +10,8 @@ const firebaseConfig = {
     projectId: "lynksurf-fc67d",
     storageBucket: "lynksurf-fc67d.firebasestorage.app",
     messagingSenderId: "115547912250",
-    appId: "1:115547912250:web:698a35f52109a26a5a1d03",
-    measurementId: "G-7G7HV9GV3Q"
+    appId: "1:115547912250:web:e6456f71c245df295a1d03",
+    measurementId: "G-77SC66L79E"
 };
 
 // Initialize Firebase
