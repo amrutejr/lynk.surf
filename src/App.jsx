@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import ToneOptions from './components/ToneOptions';
 import HowItWorks from './components/HowItWorks';
+import Pricing from './components/Pricing';
 import Demo from './components/Demo';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -46,6 +47,7 @@ function App() {
             <ToneOptions />
             <HowItWorks />
             <Demo />
+            <Pricing />
             <CTA />
           </main>
           <Footer />

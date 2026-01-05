@@ -9,11 +9,11 @@ export const ThemeProvider = ({ children }) => {
             if (typeof storedPrefs === 'string') {
                 return storedPrefs;
             }
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return 'dark';
-            }
+            // if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            //     return 'dark';
+            // }
         }
-        return 'system'; // Default to system if no preference
+        return 'light'; // Default to light if no preference
     });
 
     useEffect(() => {

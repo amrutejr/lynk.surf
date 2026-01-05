@@ -85,42 +85,31 @@ const FeatureCard = ({ feature }) => {
             <div className={`p-6 ${isLarge ? 'md:p-10 flex flex-col md:flex-row gap-8 md:items-center h-full' : 'flex flex-col h-full'}`}>
 
                 {/* Text Content */}
-                <div className={`${isLarge ? 'md:flex-1 order-2 md:order-1' : 'mb-6'}`}>
+                <div className={`${isLarge ? 'md:flex-1' : 'mb-6'}`}>
                     <div className={`
-                        ${isLarge ? 'w-16 h-16 mb-6' : 'w-12 h-12 mb-4'} 
+                        w-12 h-12 mb-4
                         bg-white dark:bg-slate-700/50 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-600 group-hover:scale-110 transition-transform duration-300
                     `}>
                         {React.cloneElement(feature.icon, {
-                            className: isLarge
-                                ? feature.icon.props.className.replace('h-6 w-6', 'h-8 w-8')
-                                : feature.icon.props.className
+                            className: feature.icon.props.className
                         })}
                     </div>
 
-                    <h3 className={`
-                        font-bold text-slate-900 dark:text-white mb-3
-                        ${isLarge ? 'text-3xl md:text-5xl leading-tight' : 'text-xl'}
-                    `}>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-3 text-xl">
                         {feature.title}
                     </h3>
 
-                    <p className={`
-                        text-brand-600 dark:text-brand-400 font-medium mb-4
-                        ${isLarge ? 'text-xl' : 'text-sm'}
-                    `}>
+                    <p className="text-brand-600 dark:text-brand-400 font-medium mb-4 text-sm">
                         {feature.tagline}
                     </p>
 
-                    <p className={`
-                        text-slate-500 dark:text-slate-400 leading-relaxed
-                        ${isLarge ? 'text-lg max-w-md' : 'text-sm'}
-                    `}>
+                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">
                         {feature.description}
                     </p>
                 </div>
 
                 {/* Media Content */}
-                <div className={`${isLarge ? 'md:flex-1 order-1 md:order-2 h-full min-h-[250px]' : 'flex-1 min-h-[200px]'}`}>
+                <div className={`${isLarge ? 'md:flex-1 h-full min-h-[250px]' : 'flex-1 min-h-[200px]'}`}>
                     <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-900 shadow-inner relative group-hover:shadow-brand-500/20 transition-all">
                         {feature.video ? (
                             <video
