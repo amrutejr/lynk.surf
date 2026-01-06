@@ -22,6 +22,20 @@ function App() {
     });
   }, []);
 
+  // Handle hash scrolling
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    }
+  }, []);
+
   const handleInstallClick = () => {
     // Trigger download
     window.open('https://dl.dropboxusercontent.com/scl/fi/2zfxumruk1msqi2yzjh48/lynksurf.zip?rlkey=ylx8fi2lht6130ywz9pgmrbw7&st=pck604ls&dl=0', '_self');
