@@ -9,9 +9,7 @@ const DatabaseCard = () => {
             </div>
 
             <div className="p-4 flex-1 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col gap-4">
-                <button className="w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold py-2.5 rounded-lg text-xs transition-colors shadow-sm">
-                    Test: Add Sample Profile
-                </button>
+
 
                 <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
                     <div className="grid grid-cols-[1fr_1.5fr_0.8fr] gap-2 p-3 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50">

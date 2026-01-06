@@ -78,7 +78,7 @@ const FeatureCard = ({ feature }) => {
     const isLarge = feature.variant === 'large';
 
     return (
-        <div className={`h-full group relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:border-brand-500/30 transition-all duration-300
+        <div className={`h-full group relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xl dark:shadow-none hover:shadow-2xl hover:border-brand-500/30 transition-all duration-300
             ${isLarge ? 'bg-gradient-to-br from-brand-50/80 via-white to-white dark:from-slate-800 dark:to-slate-900' : 'bg-white dark:bg-slate-800'}
         `}>
             {/* Content Container */}

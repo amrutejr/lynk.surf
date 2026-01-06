@@ -57,7 +57,7 @@ const Navbar = ({ onInstallClick }) => {
                     </div>
 
                     <div className="md:hidden flex items-center gap-4">
-                        <ThemeToggle />
+                        ThemeToggle />
                         <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 dark:text-slate-300" aria-label="Toggle mobile menu">
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>

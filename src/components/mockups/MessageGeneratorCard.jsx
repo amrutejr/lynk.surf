@@ -15,7 +15,7 @@ const MessageGeneratorCard = () => {
                     </p>
                 </div>
 
-                <button className="w-full bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold py-3.5 rounded-full shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 transition-colors">
+                <button className="w-full mt-auto bg-[#0066CC] hover:bg-[#0052A3] text-white font-bold py-3.5 rounded-full shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 transition-colors">
                     <Sparkles className="w-4 h-4 text-yellow-300" />
                     Generate Message
                 </button>
