@@ -11,7 +11,7 @@ const Navbar = ({ onInstallClick }) => {
     const { currentUser, loginWithGoogle, logout } = useAuth();
 
     return (
-        <nav className="fixed w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
+        <nav className="fixed top-0 left-0 w-full z-[9999] bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex-shrink-0 flex items-center gap-2">
@@ -86,8 +86,8 @@ const Navbar = ({ onInstallClick }) => {
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
 
             <AnimatePresence>
                 {isOpen && (
@@ -139,7 +139,7 @@ const Navbar = ({ onInstallClick }) => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </nav >
     );
 };
 

@@ -9,18 +9,12 @@ import Demo from './components/Demo';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import InstallGuideModal from './components/InstallGuideModal';
-import Banner from './components/Banner';
+
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
-  const [ParticleBackground, setParticleBackground] = useState(null);
 
-  React.useEffect(() => {
-    import('./components/ParticleBackground').then(module => {
-      setParticleBackground(() => module.default);
-    });
-  }, []);
 
   // Handle hash scrolling
   React.useEffect(() => {
@@ -47,14 +41,12 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 relative">
-        {ParticleBackground && <ParticleBackground />}
+
+        <Navbar onInstallClick={handleInstallClick} />
         <div className="relative z-10">
-          <Navbar onInstallClick={handleInstallClick} />
           <main>
             <div className="relative">
-              <div className="sticky top-16 z-40">
-                <Banner />
-              </div>
+
               <Hero onInstallClick={handleInstallClick} />
             </div>
             <Features />

@@ -12,12 +12,24 @@ const Hero = ({ onInstallClick }) => {
 
     return (
         <div className="relative -mt-24 min-h-screen flex items-center pt-32 pb-12 lg:pt-32 lg:pb-12 overflow-hidden">
-            {/* Background gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-brand-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob"></div>
-                <div className="absolute top-0 right-1/4 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-purple-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-32 left-1/3 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-pink-200/40 rounded-full blur-3xl mix-blend-multiply animate-blob animation-delay-4000"></div>
-            </div>
+            {/* Light mode: Radial gradients */}
+            <div
+                className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none dark:hidden"
+                style={{
+                    background: `radial-gradient(circle at 10% 20%, rgba(200, 220, 255, 0.8) 0%, transparent 40%),
+                                radial-gradient(circle at 90% 80%, rgba(230, 200, 255, 0.8) 0%, transparent 40%)`
+                }}
+            ></div>
+
+            {/* Dark mode: Deep navy with subtle spotlights */}
+            <div
+                className="hidden dark:block absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
+                style={{
+                    backgroundColor: '#0f172a',
+                    backgroundImage: `radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.25), transparent 25%),
+                                      radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.35), transparent 40%)`
+                }}
+            ></div>
 
 
 
@@ -78,7 +90,7 @@ const Hero = ({ onInstallClick }) => {
                         className="hidden lg:block relative lg:h-auto h-[400px] w-full lg:mt-20"
                     >
                         <div className="relative w-full max-w-lg mx-auto h-full flex items-center justify-center">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-brand-500 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
+                            <div className="absolute inset-x-4 inset-y-2 bg-gradient-to-r from-brand-500 to-purple-600 rounded-2xl blur-lg opacity-30 animate-pulse"></div>
                             <div className="relative w-full h-full">
                                 <HeroMockup />
                             </div>
@@ -88,7 +100,7 @@ const Hero = ({ onInstallClick }) => {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

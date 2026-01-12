@@ -11,7 +11,7 @@ const HeroMockup = () => {
     return (
         <div className="relative w-full h-full min-h-[450px] lg:min-h-[600px] flex items-center justify-center p-4">
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/10 via-purple-500/10 to-blue-500/10 rounded-3xl blur-3xl"></div>
+            <div className="absolute inset-12 bg-gradient-to-tr from-brand-500/10 via-purple-500/10 to-blue-500/10 rounded-3xl blur-3xl"></div>
 
             {/* Main Extension Window */}
             <motion.div
